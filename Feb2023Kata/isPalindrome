@@ -1,0 +1,8 @@
+//Write a function that checks if a given string (case insensitive) is a palindrome.
+
+function isPalindrome(x) {
+  let re = /[\W_]/g
+  let lowRegx = x.toLowerCase().replace(re, '')
+  let revRegx = lowRegx.split('').reverse().join('')
+  return revRegx === lowRegx
+}
