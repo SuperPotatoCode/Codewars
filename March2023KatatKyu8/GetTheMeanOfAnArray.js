@@ -4,3 +4,10 @@
 
 // The array will never be empty.
 
+//RAW CODE
+// function getAverage(marks){
+//  return Math.floor(marks.reduce((a,c,i)=> (a+c), 0 )/marks.length)
+// }
+
+//Revamped
+const getAverage = m => Math.floor(m.reduce((a,c)=>a+c,0)/m.length)
