@@ -21,25 +21,59 @@
 // spanish: 'Bienvenido',
 // swedish: 'Valkommen',
 // welsh: 'Croeso'
+// Possible invalid inputs include:
 
+// IP_ADDRESS_INVALID - not a valid ipv4 or ipv6 ip address
+// IP_ADDRESS_NOT_FOUND - ip address not in the database
+// IP_ADDRESS_REQUIRED - no ip address was supplied
+
+//RAW
 function greet(language) {
 	switch(language){
-  case english: 'Welcome',
-  case czech: 'Vitejte',
-  case danish: 'Velkomst',
-  case dutch: 'Welkom',
-  case estonian: 'Tere tulemast',
-  case finnish: 'Tervetuloa',
-  case flemish: 'Welgekomen',
-  case french: 'Bienvenue',
-  case german: 'Willkommen',
-  case irish: 'Failte',
-  case italian: 'Benvenuto',
-  case latvian: 'Gaidits',
-  case lithuanian: 'Laukiamas',
-  case polish: 'Witamy',
-  case spanish: 'Bienvenido',
-  case swedish: 'Valkommen',
-  case welsh: 'Croeso'
+  case 'IP_ADDRESS_INVALID' : return 'Welcome'
+  case 'IP_ADDRESS_NOT_FOUND' : return 'Welcome'
+  case 'IP_ADDRESS_REQUIRED' : return 'Welcome'
+  case 'english': return 'Welcome'
+  case 'czech': return 'Vitejte'
+  case 'danish': return 'Velkomst'
+  case 'dutch':return  'Welkom'
+  case 'estonian': return 'Tere tulemast'
+  case 'finnish': return 'Tervetuloa'
+  case 'flemish':return  'Welgekomen'
+  case 'french':return  'Bienvenue'
+  case 'german':return  'Willkommen'
+  case 'irish': return 'Failte'
+  case 'italian':return  'Benvenuto'
+  case 'latvian': return 'Gaidits'
+  case 'lithuanian': return 'Laukiamas'
+  case 'polish': return 'Witamy'
+  case 'spanish':return  'Bienvenido'
+  case 'swedish': return 'Valkommen'
+  case 'welsh': return 'Croeso'
   }
 }
+
+//revamped
+var database = {
+    english: 'Welcome',
+    czech: 'Vitejte',
+    danish: 'Velkomst',
+    dutch: 'Welkom',
+    estonian: 'Tere tulemast',
+    finnish: 'Tervetuloa',
+    flemish: 'Welgekomen',
+    french: 'Bienvenue',
+    german: 'Willkommen',
+    irish: 'Failte',
+    italian: 'Benvenuto',
+    latvian: 'Gaidits',
+    lithuanian: 'Laukiamas',
+    polish: 'Witamy',
+    spanish: 'Bienvenido',
+    swedish: 'Valkommen',
+    welsh: 'Croeso'
+    }
+    
+    function greet(language) {
+    return database[language] || "Welcome";
+    }
